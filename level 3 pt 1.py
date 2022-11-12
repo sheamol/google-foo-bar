@@ -1,4 +1,4 @@
-def XOR(n):
+def xor(n):
     val = n % 4
     if val == 0:
         return n
@@ -8,11 +8,12 @@ def XOR(n):
         return n + 1
     return 0
 
+
 def solution(start, length):
     if length == 1:
         return start
 
-    res = XOR(start + 2*(length-1))
+    res = xor(start + 2*(length-1))
 
     if start > 1:
         res = res ^ (start - 1)
@@ -21,4 +22,5 @@ def solution(start, length):
         res = res ^ (start + length*(2 + i) - 1 + length - 2 - i) ^ (start + length*(2 + i) - 1)
     return res
 
-print(solution(0,3))
+
+print(solution(0, 3))

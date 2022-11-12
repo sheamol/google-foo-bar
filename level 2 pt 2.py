@@ -2,6 +2,7 @@ def solution(h, q):
     
     return [step_back(h, target) for target in q]
 
+
 def step_back(height, target):
 
     current = (2 ** height) - 1 

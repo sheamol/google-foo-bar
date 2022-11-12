@@ -8,4 +8,5 @@ def solution(x, y):
         return "impossible"
     return str(counter-1)
 
-print(solution(7,4))
+
+print(solution(7, 4))
