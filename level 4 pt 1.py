@@ -8,7 +8,7 @@ def solution(bananas):
 
 
 def loop(x, y):
-    base = (x+y)//fractions.gcd(x, y)
+    base = (x + y) // fractions.gcd(x, y)
     return bool(base & (base - 1))
 
 
@@ -30,7 +30,7 @@ def pairs(g):
         if (len(g[init_mw_node])) < 1:
             del g[init_mw_node]
         else:
-            temp_sec_min = [len(g[g[init_mw_node][0]])+1, 1]
+            temp_sec_min = [len(g[g[init_mw_node][0]]) + 1, 1]
             for node_i in g[init_mw_node]:
                 if len(g[node_i]) < temp_sec_min[0]:
                     temp_sec_min = [len(g[node_i]), node_i]
