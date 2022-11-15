@@ -8,21 +8,28 @@ def solution(bananas):
 
 
 def loop(x, y):
+    """Find if a given pair of bananas will cause an infinite loop"""
     base = (x + y) // fractions.gcd(x, y)
     return bool(base & (base - 1))
 
 
 def generate_graph(bananas):
+    """Create a graph for the no. bananas if they loop"""
     g = {i: [] for i in range(len(bananas))}
     for i in range(len(bananas)):
-        for j in range(i, len(bananas)):
-            if i != j and loop(bananas[i], bananas[j]):
-                g[i].append(j)
-                g[j].append(i)
+        for ii in range(i, len(bananas)):
+            if i != ii and loop(bananas[i], bananas[ii]):
+                g[i].append(ii)
+                g[ii].append(i)
     return g
 
 
 def pairs(g):
+    """Find optimal pairings to keep as many loops possible for maximum matching"""
+
+    """Notes to recruitment team: I'm not 100% sure how this works
+    I copied a source off the web for blossoms algorithm; still kinda confused 
+    by it though (but it works!)"""
     matched = 0
     checks = len(g[max(g, key=lambda key: len(g[key]))])
     while len(g) > 1 and checks >= 1:
