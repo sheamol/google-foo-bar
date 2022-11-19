@@ -1,3 +1,4 @@
+# requires python 3+
 import base64
 from itertools import cycle
 
