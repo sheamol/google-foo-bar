@@ -1,9 +1,7 @@
 def solution(l):
     answer = [[int(j) for j in i.split('.')] for i in l]
-
     answer.sort()
     answer = ['.'.join([str(k) for k in i]) for i in answer]
-
     return answer
 
 

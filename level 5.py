@@ -17,7 +17,7 @@ def _solve(k):
 
 
 def solution(s):
-    """Take position of stopping position for the summation, convert to decimal, then returnS summation as string."""
+    """Take position of stopping position for the summation, convert to decimal, then return summation as string."""
     a = Decimal(s)
     return str(_solve(a))
 
